@@ -12,7 +12,7 @@ def rando(x):
 def main():
     chunks = cpu_count()
     total_work = 1000000000
-    work = [int(total_work / chunks)] * chunks
+    work = (int(total_work / chunks),) * chunks
 
     with futures.ProcessPoolExecutor() as executor:
         totes = sum(executor.map(rando, work))
