@@ -6,7 +6,7 @@ class Pipeline:
     def __init__(self, tasks: Sequence[Callable[[T], Any]]):
         self.__tasks: Sequence[Callable[[T], Any]] = tasks
 
-    def apply_to(self, values: Sequence[Any]) -> Generator[Any, None, None]:
+    def on(self, values: Sequence[Any]) -> Generator[Any, None, None]:
         """
             Apply a pipeline of functions to some sequence of data
         """
@@ -21,7 +21,7 @@ class Pipeline:
 def example():
     tasks = (hex, str)
     data = [1, 2, 3, 4]
-    pipe = Pipeline(tasks).apply_to(data)
+    pipe = Pipeline(tasks).on(data)
 
     for result in pipe:
         print(result)
