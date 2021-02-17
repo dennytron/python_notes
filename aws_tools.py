@@ -77,7 +77,7 @@ def download_from_s3(in_path: str, out_path: Path) -> Path:
     return Path(out_file)
 
 
-def upload_to_s3(in_path: Path, out_path: str) -> int:
+def upload_to_s3(in_path: Path, out_path: str) -> None:
     """
     Upload a file to S3
     :param in_path:
@@ -92,5 +92,3 @@ def upload_to_s3(in_path: Path, out_path: str) -> int:
 
     s3_client: Client = boto3.client("s3")
     s3_client.upload_file(in_abs, bucket, key)
-
-    return 0
