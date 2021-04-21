@@ -2,12 +2,16 @@ FROM osgeo/gdal:ubuntu-full-3.2.2
 
 RUN apt-get update
 RUN apt-get install software-properties-common -y
-RUN apt-get install libpq-dev gcc -y
+
+# for psycopg2 from source
+#RUN apt-get install libpq-dev gcc -y
 
 # install Python
 RUN add-apt-repository ppa:deadsnakes/ppa -y
 RUN apt-get update -y
 RUN apt-get install python3.9 -y
+
+# depending on what packages you need...
 RUN apt-get install python3.9-dev -y
 
 # install pip
