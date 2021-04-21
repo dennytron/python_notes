@@ -12,7 +12,7 @@ RUN apt-get update -y
 RUN apt-get install python3.9 -y
 
 # depending on what packages you need...
-RUN apt-get install python3.9-dev -y
+#RUN apt-get install python3.9-dev -y
 
 # install pip
 RUN curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
