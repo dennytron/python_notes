@@ -1,5 +1,4 @@
 """
-    Style formatting functions for Fire Risk Pro"
     https://convertingcolors.com/decimal-color-0.html?search=Decimal(0)
 """
 from osgeo.ogr import Feature
